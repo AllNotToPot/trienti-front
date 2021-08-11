@@ -1,0 +1,41 @@
+<br>
+<div class="jumbotron text-center home" >
+    <div style="border: 2px rgb(105, 110, 110) solid;">
+        <br>
+        <!-- <img class="logo" src="assets/img/shazam.svg" alt=""> -->
+        <img class="logo" src="assets/img/fav.png" alt="">
+        <h1>Trienti</h1>
+        <p class="lead">Bienvenido al sistema de atención de pedidos y reclamos</p>
+        <div>
+            <a *ngIf="!auth.loggedIn()" class="btn btn-primary" [routerLink]="['/registro']">Registro</a> 
+            <a *ngIf="!auth.loggedIn()" class="btn btn-success ml-1" [routerLink]="['/login']" > Inicia Sesión</a>
+            <a *ngIf="auth.loggedIn()" class="btn btn-success ml-1" [routerLink]="['/dashboard']" > Ir al DashBoard</a>
+        </div>
+        <br>
+    </div>
+</div>
+
+<div class="jumbotron">
+    <div style="border: 2px rgb(105, 110, 110) solid;">
+        <div class="row">
+            <div class="col-md-4 pt-2" >        
+                <img src="assets/img/producto.svg" alt="">
+                <h3> Atiende tus pedidos</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum pariatur asperiores rem nesciunt rerum, repellat modi omnis.</p>
+            </div>
+            <div class="col-md-4 pt-2">
+                <img src="assets/img/seguridad.svg" alt="">
+                <h3>Seguridad</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum pariatur asperiores rem nesciunt rerum, repellat modi omnis.</p>
+            </div>
+            <div class="col-md-4 pt-2">
+                <img src="assets/img/hora.svg" alt="">
+                <h3>Ahorra tiempo</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum pariatur asperiores rem nesciunt rerum, repellat modi omnis.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    
+</footer>

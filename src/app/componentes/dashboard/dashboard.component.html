@@ -1,0 +1,121 @@
+<br>
+<div class="jumbotron text-center pt-3 pb-3" >
+    <img class="logo" src="assets/img/fav.png" alt="">
+    <h3>Trienti</h3>
+    
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+    </ol>
+</nav>
+</div>
+
+
+
+<div class="row ">
+    <div class="col-md-6"> 
+        <div class="jumbotron">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li><h3 class="text-center breadcrumb-item active">Servicios</h3></li>
+                </ol>
+            </nav>
+            <br>
+            <div class="accordion " id="accordionServicios">
+               
+                <!--  -->
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0" style="display: flex; justify-content: space-between;">
+                            <button class="btn btn-link" onclick="this.blur();" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                Registrar Nueva Atención
+                            </button>
+                            
+                            <button class="btn btn-success" [routerLink]="['/dashboard/registroAtencion']">Acceder</button>
+                        </h5>
+                    </div>
+
+                    <div id="collapse1" class="collapse fade" aria-labelledby="headingOne" data-parent="#accordionServicios">
+                        <div class="card-body">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga id sed nemo nesciunt quas quo ducimus at eum? Quidem harum eveniet rerum dolores velit nam possimus soluta dolor sit tempora?
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h5 class="mb-0" style="display: flex; justify-content: space-between;">
+                            <button class="btn btn-link" onclick="this.blur();" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
+                                Consultar Servicios
+                            </button>
+                            
+                            <button class="btn btn-success" [routerLink]="['/dashboard/consultarAtencion']">Acceder</button>
+                        </h5>
+                    </div>
+
+                    <div id="collapse2" class="collapse fade" aria-labelledby="headingTwo" data-parent="#accordionServicios">
+                        <div class="card-body">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, delectus facere. Aspernatur, libero aut molestiae debitis incidunt nihil dolorum dolore! Eum fuga corrupti id quidem animi accusamus accusantium odio consequuntur!
+                        </div>
+                    </div>
+                </div>
+
+
+
+                
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="jumbotron">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li><h3 class="text-center breadcrumb-item active">Reclamos</h3></li>
+                </ol>
+            </nav>
+            <br>
+            <div class="accordion" id="accordionReclamos">
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <h5 class="mb-0" style="display: flex; justify-content: space-between;">
+                            <button class="btn btn-link" onclick="this.blur();" type="button" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+                                Registrar Nuevo Reclamo
+                            </button>
+                            <button class="btn btn-success" [routerLink]="['/dashboard/registroReclamo']">Acceder</button>
+                        </h5>
+                    </div>
+
+                    <div id="collapse3" class="collapse fade" aria-labelledby="headingThree" data-parent="#accordionReclamos">
+                        <div class="card-body">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum atque nulla provident rem facilis modi inventore fuga, molestias, omnis voluptatibus soluta impedit non. Nesciunt molestiae deserunt voluptatibus quis officia ullam!
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="card">
+                    <div class="card-header" id="headingFour">
+                        <h5 class="mb-0" style="display: flex; justify-content: space-between;">
+                            <button class="btn btn-link" onclick="this.blur();" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="true" aria-controls="collapse4">
+                                Consultar Reclamos
+                            </button>
+                            
+                            <button class="btn btn-success" [routerLink]="['/dashboard/consultarReclamo']" >Acceder</button>
+                        </h5>
+                    </div>
+
+                    <div id="collapse4" class="collapse fade" aria-labelledby="headingFour" data-parent="#accordionReclamos">
+                        <div class="card-body">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa ab, aliquid quia consequatur non, temporibus minus praesentium quisquam commodi maiores, animi tempora provident inventore ducimus illum! Earum rerum hic quas!
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                
+            </div>
+        </div>
+    </div>
+
+</div>

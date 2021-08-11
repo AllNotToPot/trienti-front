@@ -1,0 +1,213 @@
+<br>
+<div class="jumbotron text-center pt-3 pb-3" >
+    <img class="logo" src="assets/img/fav.png" alt="">
+    <!-- <h3>Trienti</h3> -->
+    <p></p>
+    
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a [routerLink]="['/']">Home</a></li>
+      <li class="breadcrumb-item" aria-current="page"><a [routerLink]="['/dashboard']">Dashboard</a></li>
+      <li class="breadcrumb-item active" aria-current="page"><a>Registro Atencion</a></li>
+    </ol>
+</nav>
+</div>
+
+
+<div class="row">
+    <div class="col-md-8">
+            
+            <div class="jumbotron forms pt-3" >
+                
+                <br>
+                <h3 class="text-center">Datos del Cliente <h3 *ngIf="_id">{{_id}}</h3> </h3>   
+                <br>
+
+                <form action="">
+
+                    <div class="form-group row" style="margin-left: 10%; margin-right: 10%;">
+                        <label for="inputBusqueda" class="col-sm-2 col-form-label">DNI</label>
+                        <div class="col-sm-6">
+                          <input type="text" class="form-control" id="inputBusqueda" [(ngModel)]="dni" name="dni">
+                        </div>
+                        <div class="col-sm-4">
+                            <button class="btn btn-primary" (click)="findByDNI()">Buscar</button>
+                        </div>
+
+                    </div>
+                    
+                
+                    <div class="text-center">
+                        <h5 class="text-center" *ngIf="!clienteExiste"> El cliente no se encuentra en el sistema, por favor registre sus datos</h5>
+                    </div>
+
+                    <br>
+
+                    <div class="form-group row">
+                        <label for="inputNombre" class="col-sm-3 col-form-label">Nombre</label>
+                        <div class="col-sm-8">
+                          <input type="text" class="form-control" id="inputNombre" [(ngModel)]="nombre" name="nombre">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="inputApellido" class="col-sm-3 col-form-label">Apellido</label>
+                        <div class="col-sm-8">
+                          <input type="text" class="form-control" id="inputApellido" [(ngModel)]="apellido" name="apellido">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputDNI" class="col-sm-3 col-form-label">DNI</label>
+                        <div class="col-sm-8">
+                          <input type="text" class="form-control" id="inputDNI" [(ngModel)]="dni" name="dni">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="inputTelefono" class="col-sm-3 col-form-label">Telefono</label>
+                        <div class="col-sm-8">
+                          <input type="text" class="form-control" id="inputTelefono" [(ngModel)]="telefono" name="telefono">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputTipoCliente" class="col-sm-3 col-form-label">Tipo Cliente</label>
+                        <div class="col-sm-8">
+                          <input type="text" class="form-control" id="inputTipoCliente" [(ngModel)]="tipo_cliente" name="tipo_cliente">
+                        </div>
+                    </div>  
+                    <div class="form-group row">
+                        <label for="inputTipoCliente" class="col-sm-3 col-form-label">Correo</label>
+                        <div class="col-sm-8">
+                          <input type="text" class="form-control" id="inputTipoCliente" [(ngModel)]="correo" name="correo">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputTipoCliente" class="col-sm-3 col-form-label">Ciudad</label>
+                        <div class="col-sm-8">
+                          <input type="text" class="form-control" id="inputTipoCliente" [(ngModel)]="ciudad" name="direccion.ciudad">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                        <label for="inputTipoCliente" class="col-sm-3 col-form-label">Distrito</label>
+                        <div class="col-sm-8">
+                          <input type="text" class="form-control" id="inputTipoCliente" [(ngModel)]="distrito" name="direccion.distrito">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                        <label for="inputTipoCliente" class="col-sm-3 col-form-label">Calle</label>
+                        <div class="col-sm-8">
+                          <input type="text" class="form-control" id="inputTipoCliente" [(ngModel)]="calle" name="direccion.calle">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputTipoCliente" class="col-sm-3 col-form-label">Numero</label>
+                        <div class="col-sm-8">
+                          <input type="text" class="form-control" id="inputTipoCliente" [(ngModel)]="numero" name="direccion.numero">
+                        </div>
+                    </div>
+
+                    
+
+                </form>
+            </div>
+        
+    </div>
+
+
+
+
+
+    <!--  -->
+    <div class="col-md-4">
+        <div class="jumbotron forms pt-3 pb-2 mb-3">
+            
+                <br>
+                <h3 class="text-center">Servicios</h3>   
+                <br>
+
+                <form action="">
+
+                    <div class="form-group row">
+                        <label for="inputNombre" class="col-sm-3 col-form-label">Tipo</label>
+                        <div class="col-sm-9">
+
+                            <div *ngIf="!tipoSeleccionado" class="input-group-prepend"  >
+                                <button class="btn btn-success dropdown-toggle"  type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Elige una opcion</button>
+                                <div class="dropdown-menu" >
+                                    <a class="dropdown-item" (click)="filtrarPlanes(serv)" *ngFor="let serv of ListaTiposServicio" >{{serv}}</a>
+                                </div>
+                            </div>
+
+                            <div *ngIf="tipoSeleccionado" class="input-group-prepend"  >
+                                <button class="btn btn-success dropdown-toggle"  type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{tipoSeleccionado}}</button>
+                                <div class="dropdown-menu" >
+                                    <a class="dropdown-item" (click)="filtrarPlanes(serv)" *ngFor="let serv of ListaTiposServicio" >{{serv}}</a>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group row">
+                        <label for="inputNombre" class="col-sm-3 col-form-label">Plan</label>
+                        <div class="col-sm-9">
+                            <div *ngIf="!tipoSeleccionado" class="input-group-prepend"  >
+                                <button class="btn btn-success dropdown-toggle"  type="button" >Elige una tipo</button> 
+                            </div>
+
+                            <div *ngIf="tipoSeleccionado && !servicioSeleccionado" class="input-group-prepend"  >
+                                <button class="btn btn-success dropdown-toggle"  type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Elige una plan</button>
+                                <div class="dropdown-menu" >
+                                    <a class="dropdown-item" (click)="mostrarDetallesPlan(servFilt)"*ngFor="let servFilt of serviciosFiltrados" >{{servFilt.nombre}}</a>
+                                </div>
+                            </div>
+
+                            <div *ngIf="tipoSeleccionado && servicioSeleccionado" class="input-group-prepend"  >
+                                <button class="btn btn-success dropdown-toggle"  type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{servicioSeleccionado.nombre}}</button>
+                                <div class="dropdown-menu" >
+                                    <a class="dropdown-item" (click)="mostrarDetallesPlan(servFilt)"*ngFor="let servFilt of serviciosFiltrados" >{{servFilt.nombre}}</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="form-group">
+                            <label class="col-md-12 text-center" for="DetallesServicio">Detalles</label>
+                            <textarea name="DetallesServicio" id="DetallesServicio" cols="40" rows="2" [(ngModel)]="detallesServicio" name="detallesServicio"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                        <label for="inputPrecioReferencial" class="col-sm-7 col-form-label">Precio Referencial</label>
+                        <div class="col-sm-5">
+                          <input type="text" class="form-control" id="inputPrecioReferencial" [(ngModel)]="precio_referencial" name="precio_referencial">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                        <label for="inputPrecioReferencial" class="col-sm-7 col-form-label">Duracion Contrato (Meses) </label>
+                        <div class="col-sm-5">
+                          <input type="text" class="form-control" id="inputPrecioReferencial" placeholder="[Ingresar]" [(ngModel)]="duracionServicio" name="duracionServicio">
+                        </div>
+                    </div>
+                    <br>
+                    <h5 style="display: flex; justify-content: space-between;">
+                        <a class="btn btn-danger" >Cancelar</a>
+                        <a class="btn btn-success" (click)="registrarAtencion()">Registrar</a>
+                    </h5>
+
+                </form>
+            
+        </div>
+
+    </div>
+
+</div>
+    

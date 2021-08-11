@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" [routerLink]="['/']">Trienti</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+          <a class="nav-link" [routerLink]="['/']">Home</a>
+        </li>
+        <li *ngIf="auth.loggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+          <a class="nav-link" [routerLink]="['/dashboard']">Dashboard</a>
+        </li>
+
+      </ul>
+
+      
+      <ul class="navbar-nav ml-auto">
+        
+        
+        <li *ngIf="auth.loggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+          <a class="nav-link" [routerLink]="['/perfil']">Perfil</a>
+        </li>
+
+
+
+        <li *ngIf="!auth.loggedIn()"  class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+            <a class="nav-link" [routerLink]="['/login']">Login</a>
+        </li>
+        
+        <li *ngIf="!auth.loggedIn()"  class="nav-item"  [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+            <a class="nav-link" [routerLink]="['/registro']">Registro</a>
+        </li>
+
+        <li *ngIf="auth.loggedIn()" class="nav-item ml-2">
+            <a class="btn btn-outline-success" (click)="onLogoutClick()">Cerrar Sesión</a>
+        </li>
+      </ul>
+
+    </div>
+  </nav>

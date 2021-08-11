@@ -1,0 +1,81 @@
+
+
+<div class="row mt-5 pt-5">
+    <div class="col-md-6 ">
+        <div class="jumbotron text-center portada" >
+            <div style="border: 2px rgb(255, 255, 255) solid;">
+                <br><br>
+                <img class="logo" src="assets/img/fav.png" alt="">
+                <h1>Trienti</h1>
+                <p class="lead">Bienvenidos al sistema de registro.</p>
+                <br><br><br><br>
+                <div>
+                    <p>¿Ya tienes una cuenta?</p>
+                    <a class="btn btn-success ml-1" [routerLink]="['/login']" > Inicia Sesión</a>
+                </div>
+                <br>
+            </div>
+        </div>
+
+    </div>
+    
+
+    <div class="col-md-6 ">
+
+        <div class="jumbotron formulario">
+            <h3 class="page-header h4">Registro de usuario</h3>
+                
+            <div class="form">
+                <form id="formRegistro" class="pb-5 mb-3" (submit)="onRegisterSubmit()" name="formRegistro" [formGroup]="formRegistro">
+                    <div class="form-group">
+                        <label>Nombre</label>
+                        <input type="text" class="form-control" [(ngModel)]="nombre" name="nombre" formControlName="nombre"
+                         [ngClass]="{'is-invalid':formRegistro.get('nombre').touched && formRegistro.get('nombre').invalid}">
+                        <div class="invalid-feedback">
+                            <div class="mensaje-error m-0">El nombre es requerido</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Nombre de Usuario</label>
+                        <input type="text" class="form-control" [(ngModel)]="username" name="username" formControlName="nombreUsuario"
+                        [ngClass]="{'is-invalid':formRegistro.get('nombreUsuario').touched && formRegistro.get('nombreUsuario').invalid}">
+                        <div class="invalid-feedback">
+                            <div class="mensaje-error">El nombre de usuario es requerido</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Correo</label>
+                        <input type="text" class="form-control" [(ngModel)]="correo" name="correo" formControlName="correo"
+                        [ngClass]="{'is-invalid':formRegistro.get('correo').touched && formRegistro.get('correo').invalid}">
+                        <div *ngIf="formRegistro.get('correo').touched && formRegistro.get('correo').invalid" class="invalid-feedback">
+                            <div class="mensaje-error" *ngIf="formRegistro.get('correo').errors.required">El correo es requerido</div>
+                            <div class="mensaje-error" *ngIf="formRegistro.get('correo').errors.email">El correo debe ser válido</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Contraseña</label>
+                        <input type="password" class="form-control" [(ngModel)]="password" name="password" formControlName="password"
+                        [ngClass]="{'is-invalid':formRegistro.get('password').touched && formRegistro.get('password').invalid}">
+                        <div class="invalid-feedback">
+                            <div class="mensaje-error">La contraseña es requerida</div>
+                        </div>
+                    </div>
+                    
+                    <div class="no-gutters">
+                        <div class="row">
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary" [disabled]="!formRegistro.valid" >Registrar</button>
+                            </div>
+                            <div class="col-12 mt-2 invalid-feedback" style="display: none;" id="mensajeDuplicado" >
+                                <label>El usuario ya esta registrado</label>
+                            </div>
+                        </div>                    
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+        
+    </div>
+</div>
+

@@ -1,0 +1,14 @@
+<br><br>
+<div *ngIf="usuario" class="jumbotron" style="margin-left: 20%; margin-right: 20%;">
+    <h2 class="page-header" class="text-center">PERFIL DE USUARIO</h2>
+    
+    <br>
+    <ul class="list-group" style="margin-left: 15%; margin-right: 15%;">
+        
+        <li class="list-group-item text-center"><img src="../../../assets/img/16363.png" alt="" style="height: 100px; width: 100px; "></li>
+        <li class="list-group-item text-center">Nombre: {{usuario.nombre}}</li>
+        <li class="list-group-item text-center">Username: {{usuario.username}}</li>
+        <li class="list-group-item text-center">Email: {{usuario.correo}}</li>
+
+    </ul>
+</div>
