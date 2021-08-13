@@ -18,13 +18,13 @@ export class AuthService {
     const headers = new HttpHeaders();
     headers.append('Content-Type','aplication/json');
     console.log(headers);
-    return this.http.post('http://localhost:3000/usuarios/registro',usuario,{headers: headers});
+    return this.http.post('http://68.183.116.158:3000/usuarios/registro',usuario,{headers: headers});
   }
 
   autenticarUsuario(usuario){
     const headers = new HttpHeaders();
     headers.append('Content-Type','aplication/json');
-    return this.http.post('http://localhost:3000/usuarios/autenticacion',usuario, {headers: headers});
+    return this.http.post('http://68.183.116.158:3000/usuarios/autenticacion',usuario, {headers: headers});
   }
 
   getPerfil(){
@@ -34,7 +34,7 @@ export class AuthService {
         .set('Authorization',`${this.authToken}`).set('Content-Type','aplication/json')
     }
     
-    return this.http.get('http://localhost:3000/usuarios/perfil',header);
+    return this.http.get('http://68.183.116.158:3000/usuarios/perfil',header);
   } 
 
   cargarToken(){
