@@ -10,15 +10,15 @@ export class ServicioService {
 
 
   listaServicios(){
-    return this.http.get('http://localhost:3000/api/servicios');
+    return this.http.get('http://68.183.116.158:3000/api/servicios');
   }
 
   listaTiposServicios(){
-    return this.http.get('http://localhost:3000/api/servicios/tipos')
+    return this.http.get('http://68.183.116.158:3000/api/servicios/tipos')
   }
 
   filtroServicios(tipo_servicio){
-    return this.http.get('http://localhost:3000/api/servicios/filtro/'+tipo_servicio)
+    return this.http.get('http://68.183.116.158:3000/api/servicios/filtro/'+tipo_servicio)
   }
 
 }
