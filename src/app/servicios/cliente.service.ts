@@ -17,15 +17,15 @@ export class ClienteService {
       headers: new HttpHeaders()
         .set('Authorization',`${this.authToken}`)
     }
-    return this.http.get('https://68.183.116.158/api/clientes',header);
+    return this.http.get('https://back-trienti.herokuapp.com/api/clientes',header);
   }
 
   getClienteByDNI(dni){
-    return this.http.get('https://68.183.116.158/api/clientes/dni/'+dni);
+    return this.http.get('https://back-trienti.herokuapp.com/api/clientes/dni/'+dni);
   }
 
   postCliente(cliente){
-    return this.http.post('https://68.183.116.158/api/clientes/', cliente)
+    return this.http.post('https://back-trienti.herokuapp.com/api/clientes/', cliente)
   }
 
 }

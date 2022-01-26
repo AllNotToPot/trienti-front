@@ -10,11 +10,11 @@ export class AtencionService {
 
 
   registrarAtencionCliente(atencion: Atencion){
-    return this.http.post('https://68.183.116.158/api/atenciones/servicio',atencion);
+    return this.http.post('https://back-trienti.herokuapp.com/api/atenciones/servicio',atencion);
   }
 
   registrarReclamoCliente(reclamo: Atencion){
-    return this.http.post('https://68.183.116.158/api/atenciones/reclamo',reclamo);
+    return this.http.post('https://back-trienti.herokuapp.com/api/atenciones/reclamo',reclamo);
 
   }
 

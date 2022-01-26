@@ -18,13 +18,13 @@ export class AuthService {
     const headers = new HttpHeaders();
     headers.append('Content-Type','aplication/json');
     console.log(headers);
-    return this.http.post('https://68.183.116.158/usuarios/registro',usuario,{headers: headers});
+    return this.http.post('https://back-trienti.herokuapp.com/usuarios/registro',usuario,{headers: headers});
   }
 
   autenticarUsuario(usuario){
     const headers = new HttpHeaders();
     headers.append('Content-Type','aplication/json');
-    return this.http.post('https://68.183.116.158/usuarios/autenticacion',usuario, {headers: headers});
+    return this.http.post('https://back-trienti.herokuapp.com/usuarios/autenticacion',usuario, {headers: headers});
   }
 
   getPerfil(){
@@ -34,7 +34,7 @@ export class AuthService {
         .set('Authorization',`${this.authToken}`).set('Content-Type','aplication/json')
     }
     
-    return this.http.get('https://68.183.116.158/usuarios/perfil',header);
+    return this.http.get('https://back-trienti.herokuapp.com/usuarios/perfil',header);
   } 
 
   cargarToken(){

@@ -10,15 +10,15 @@ export class ServicioService {
 
 
   listaServicios(){
-    return this.http.get('https://68.183.116.158/api/servicios');
+    return this.http.get('https://back-trienti.herokuapp.com/api/servicios');
   }
 
   listaTiposServicios(){
-    return this.http.get('https://68.183.116.158/api/servicios/tipos')
+    return this.http.get('https://back-trienti.herokuapp.com/api/servicios/tipos')
   }
 
   filtroServicios(tipo_servicio){
-    return this.http.get('https://68.183.116.158/api/servicios/filtro/'+tipo_servicio)
+    return this.http.get('https://back-trienti.herokuapp.com/api/servicios/filtro/'+tipo_servicio)
   }
 
 }
